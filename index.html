@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles/index.css" />
+    <title>Course</title>
+  </head>
+  <body>
+    <header class="header">
+      <figure class="header_wrapper-logo">
+        <img
+          alt="Logo"
+          class="header_logo-img"
+          src="./assets/images/logo_small.png"
+          height="60px"
+          width="150px"
+        />
+      </figure>
+      <nav class="header_nav">
+        <ul class="wrapper_nav">
+          <li class="nav-item">Home</li>
+          <li class="nav-item">Courses</li>
+          <li class="nav-item">Class</li>
+          <li class="nav-item">Foro</li>
+        </ul>
+        <figure class="wrapper_profile">
+          <img
+            src="./assets/images/profile.png"
+            alt="Profile user"
+            class="profile_image"
+          />
+        </figure>
+        <p class="profile_name">Osvaldo Trejo</p>
+      </nav>
+    </header>
+    <section class="wrapper-classes">
+      <article class="wrapper-classes-section">
+        <h2 class="classes-title">classes</h2>
+          <div class="card-wrapper">
+            <div class="card">
+              <h3>Course title</h3>
+            </div>
+            <div class="card">
+              <h3>Course title</h3>
+            </div>
+            <div class="card">
+              <h3>Course title</h3>
+            </div>
+            <div class="card">
+              <h3>Course title</h3>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="student-article">
+        <h2>Student Progress</h2>
+        <canvas id="myChart"></canvas>
+      </article>
+    </section>
+    <section>
+      <h2>New courses that you can suscribe</h2>
+      <div></div>
+    </section>
+    <footer>
+      <h3>Newslatter</h3>
+      <input type="email" name="" id="" />
+    </footer>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            datasets: [{
+                label: '# weekdays',
+                data: [12, 19, 3, 5, 2, 3, 5],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+  </script>
+  </body>
+</html>
