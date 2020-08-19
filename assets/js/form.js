@@ -26,6 +26,7 @@ submitButton.addEventListener("click", async (evt) => {
         },
       }
     );
+    alert("Si se guardo");
     console.log(res.json());
   } catch (err) {
     console.log(err);
