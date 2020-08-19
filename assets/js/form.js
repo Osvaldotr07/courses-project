@@ -13,18 +13,18 @@ allInputForm.forEach((input) => {
 });
 
 submitButton.addEventListener("click", async (evt) => {
-  alert("hello");
   let res = await fetch(
     "https://microservicio-react-students.us.south.cf.appdomain.cloud/newUser",
     {
-      method: "post",
+      method: "POST",
       body: JSON.stringify(user),
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST",
       },
     }
   );
-
+  alert("hello");
   console.log(res);
 });
