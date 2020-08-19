@@ -21,7 +21,6 @@ submitButton.addEventListener("click", async (evt) => {
         body: JSON.stringify(user),
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
         },
       }
     );
