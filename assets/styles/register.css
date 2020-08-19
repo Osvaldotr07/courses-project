@@ -1,0 +1,58 @@
+.register {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.register > h1 {
+  font-size: 2em;
+}
+
+.form_register {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form_register > label {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.form_register > input {
+  width: 70%;
+  border-radius: 5px;
+  outline: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 25px;
+  margin: 20px;
+  padding: 5px;
+}
+
+::placeholder {
+  font-size: 1.2em;
+}
+
+.submit-button {
+  width: 100px;
+  height: 30px;
+  margin-top: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  background-color: #272525;
+  transition: 1s;
+}
+
+.submit-button:active {
+  transform: scale(0.8);
+}

@@ -3,9 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles/register.css" />
+    <link rel="stylesheet" href="./assets/styles/index.css" />
     <title>Register</title>
   </head>
   <body>
-    <h1>Hello world</h1>
+    <header class="header">
+      <figure class="header_wrapper-logo">
+        <img
+          alt="Logo"
+          class="header_logo-img"
+          src="./assets/images/logo_small.png"
+          height="60px"
+          width="150px"
+        />
+      </figure>
+      <nav class="header_nav">
+        <ul class="wrapper_nav">
+          <li class="nav-item">
+            <a href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="./classes.html">Class</a>
+          </li>
+          <li class="nav-item">Class</li>
+          <li class="nav-item">Foro</li>
+        </ul>
+        <figure class="wrapper_profile">
+          <img
+            src="./assets/images/profile.png"
+            alt="Profile user"
+            class="profile_image"
+          />
+        </figure>
+        <p class="profile_name"></p>
+        <div class="button-signin">Iniciar Session</div>
+        <div class="button-signon">
+          <a href="/register.html">Registrar</a>
+        </div>
+      </nav>
+    </header>
+    <section class="register">
+      <h1>New User</h1>
+      <form class="form_register">
+        <label>Nombre</label>
+        <input
+          type="text"
+          placeholder="Nombre"
+          name="nombre"
+          class="input-form"
+        />
+        <label>Apellidos</label>
+        <input
+          type="text"
+          placeholder="Apellidos"
+          name="apellidos"
+          class="input-form"
+        />
+        <label>Nombre de usuario</label>
+        <input
+          type="text"
+          placeholder="Nombre de usuario"
+          name="username"
+          class="input-form"
+        />
+        <label>Contraseña</label>
+        <input
+          type="password"
+          placeholder="Contraseña"
+          name="password"
+          class="input-form"
+        />
+        <div type="submit" class="submit-button">
+          Enviar
+        </div>
+      </form>
+    </section>
+    <script src="./assets/js/form.js"></script>
   </body>
 </html>
