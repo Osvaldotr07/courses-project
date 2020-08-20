@@ -1,21 +1,6 @@
 {
+  "name": "course-project",
   "version": 2,
-  "builds": [
-    {
-      "src": "app.js",
-      "use": "@now/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/app.js",
-      "methods": ["GET"]
-    },
-    {
-      "src": "/users",
-      "dest": "/user.js",
-      "methods": ["POST"]
-    }
-  ]
+  "builds": [{ "src": "app.js", "use": "@now/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "/app.js" }]
 }
