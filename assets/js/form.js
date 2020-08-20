@@ -1,4 +1,4 @@
-let user = {};
+var user = {};
 
 let submitButton = document.querySelector(".submit-button");
 let allInputForm = document.querySelectorAll(".input-form");
@@ -14,18 +14,13 @@ allInputForm.forEach((input) => {
 
 submitButton.addEventListener("click", async (evt) => {
   try {
-    let res = await fetch(
-      "https://microservicio-react-students.us-south.cf.appdomain.cloud/newUser",
-      {
-        method: "POST",
-        body: JSON.stringify(user),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    let res = await fetch("/user/newUser", {
+      method: "POST",
+      body: JSON.stringify(user),
+    });
     alert("Si se guardo");
-    console.log(res.json());
+    let resJson = await res.json();
+    console.log(resJson);
   } catch (err) {
     console.log(err);
   }
