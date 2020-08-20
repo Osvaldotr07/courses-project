@@ -45,7 +45,7 @@
     </header>
     <section class="register">
       <h1>New User</h1>
-      <form class="form_register">
+      <form class="form_register" id="form">
         <label>Nombre</label>
         <input
           type="text"
@@ -65,14 +65,14 @@
         <input
           type="email"
           placeholder="Email"
-          name="nombre"
+          name="email"
           class="input-form"
         />
         <label>Numero telefonico</label>
         <input
           type="number"
           placeholder="Numero telefonico"
-          name="nombre"
+          name="numero"
           class="input-form"
         />
         <label>Nombre de usuario</label>
@@ -91,9 +91,7 @@
           class="input-form"
           required
         />
-        <div type="submit" class="submit-button">
-          Enviar
-        </div>
+        <input type="submit" class="submit-button" id="submit" />
       </form>
     </section>
     <script src="js/form.js"></script>

@@ -14,7 +14,6 @@ app.get("/", (req, res) => {
 });
 
 app.get("/register", (req, res) => {
-  console.log("Hello");
   res.sendFile(__dirname + "/views/register.html");
 });
 

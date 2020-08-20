@@ -1,27 +1,18 @@
-var user = {};
+const form = document.querySelector("#form");
 
-let submitButton = document.querySelector(".submit-button");
-let allInputForm = document.querySelectorAll(".input-form");
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  let formData = new FormData(event.currentTarget);
+  console.log("hello", formData);
 
-allInputForm.forEach((input) => {
-  input.addEventListener("change", (evt) => {
-    user = {
-      ...user,
-      [evt.target.name]: evt.target.value,
-    };
+  let response = await fetch("/user/newUser", {
+    method: "POST",
+    body: formData,
   });
-});
 
-submitButton.addEventListener("click", async (evt) => {
-  try {
-    let res = await fetch("/user/newUser", {
-      method: "POST",
-      body: JSON.stringify(user),
-    });
-    alert("Si se guardo");
-    let resJson = await res.json();
-    console.log(resJson);
-  } catch (err) {
-    console.log(err);
+  let responseJson = await response.json();
+  console.log(responseJson);
+  if (response.ok) {
+    alert("Usuario guardado");
   }
 });
