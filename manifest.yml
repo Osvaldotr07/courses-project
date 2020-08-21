@@ -1,4 +1,4 @@
 applications:
-  - name: "general-backend"
-    instances: 1
-    memory: 64M
+- name: "general-backend"
+  instances: 1
+  memory: 64M
