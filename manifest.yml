@@ -1,0 +1,6 @@
+application:
+  - name : "courses-project",
+    instance: 1
+    memory: 64M
+    disk_quota: 510M
+    buildpack: static_buildpack
