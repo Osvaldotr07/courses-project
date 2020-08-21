@@ -15,4 +15,7 @@ form.addEventListener("submit", async (event) => {
   if (response.ok) {
     alert("Usuario guardado");
   }
+  if(response.status === 405) {
+    alert('La contraseña debe de ser mayor 8 digitos y debe de contener caracteres')
+  }
 });

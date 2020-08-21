@@ -18,19 +18,27 @@ router.post("/newUser", upload.single(), function (req, res) {
     username,
     password,
   } = req.body;
-  ibmdb.open(connstr, (err, conn) => {
-    if (err) return console.log("error in connection: ", err);
 
-    conn.query(
-      `INSERT INTO QKS86401.USERS VALUES (${id_random}, '${nombre}', '${apellidos}', '${email}', '${numero}', '${username}', '${password}')`,
-      (err, data) => {
-        err
-          ? res.json({ message: `Error in connection: ${err}` })
-          : res.json({ message: "New user inserted" });
-        ibmdb.close();
-      }
-    );
-  });
+  let regexp_password = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/
+  console.log(regexp_password.exec(password))
+  if(regexp_password.exec(password)!== null){
+    res.status(405).json({message: 'La contraseña debera de tener mas de 8 caracteres'})
+  }
+  else {
+    ibmdb.open(connstr, (err, conn) => {
+      if (err) return console.log("error in connection: ", err);
+  
+      conn.query(
+        `INSERT INTO QKS86401.USERS VALUES (${id_random}, '${nombre}', '${apellidos}', '${email}', '${numero}', '${username}', '${password}')`,
+        (err, data) => {
+          err
+            ? res.json({ message: `Error in connection: ${err}` })
+            : res.json({ message: "New user inserted" });
+          ibmdb.close();
+        }
+      );
+    });
+  }
 });
 
 module.exports = router;
