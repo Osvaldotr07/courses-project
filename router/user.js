@@ -20,7 +20,6 @@ router.post("/newUser", upload.single(), function (req, res) {
   } = req.body;
 
   let regexp_password = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/
-  console.log(regexp_password.exec(password))
   if(regexp_password.exec(password)!== null){
     res.status(405).json({message: 'La contraseña debera de tener mas de 8 caracteres'})
   }
