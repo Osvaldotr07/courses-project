@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/register.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <header class="header">
+      <figure class="header_wrapper-logo">
+        <img
+          alt="Logo"
+          class="header_logo-img"
+          src="images/logo_small.png"
+          height="60px"
+          width="150px"
+        />
+      </figure>
+      <nav class="header_nav">
+        <ul class="wrapper_nav">
+          <li class="nav-item">
+            <a href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="/classes">Class</a>
+          </li>
+          <li class="nav-item">Class</li>
+          <li class="nav-item">Foro</li>
+        </ul>
+        <figure class="wrapper_profile">
+          <img
+            src="images/profile.png"
+            alt="Profile user"
+            class="profile_image"
+          />
+        </figure>
+        <p class="profile_name"></p>
+        <div class="button-signon">
+          <a href="/register">Registrar</a>
+        </div>
+      </nav>
+    </header>
+    <section class="register">
+      <h1>Login</h1>
+      <form class="form_register" id="form">
+        <label>email</label>
+        <input
+          type="email"
+          placeholder="username"
+          name="email"
+          class="input-form"
+        />
+        <label>password</label>
+        <input
+          type="password"
+          placeholder="Apellidos"
+          name="password"
+          class="input-form"
+          required
+        />
+        <input type="submit" class="submit-button" id="submit" />
+      </form>
+    </section>
+    <script src="js/strategic.js"></script>
+  </body>
+</html>

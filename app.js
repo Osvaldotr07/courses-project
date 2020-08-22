@@ -21,6 +21,12 @@ app.get("/classes", (req, res) => {
   console.log("Hello");
   res.sendFile(__dirname + "/views/classes.html");
 });
+
+app.get("/login", (req, res) => {
+  console.log("Hello");
+  res.sendFile(__dirname + "/views/login.html");
+});
+
 app.listen(8080, () => {
   console.log("Puerto conectado en el puerto 8080");
 });

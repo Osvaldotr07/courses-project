@@ -6,6 +6,40 @@ const ibmdb = require("ibm_db");
 const connstr =
   "DATABASE=BLUDB;HOSTNAME=dashdb-txn-sbox-yp-dal09-14.services.dal.bluemix.net;PORT=50001;PROTOCOL=TCPIP;UID=qks86401;PWD=0j2z3xk+rxg9hn5x;Security=SSL;";
 
+
+
+router.post('/login', upload.single(),(req, res) => {
+  console.log(req.body);
+  const {
+    email,
+    password,
+  } = req.body;
+
+  ibmdb.open(connstr, (err, conn) => {
+    if (err) return console.log("error in connection: ", err);
+
+    conn.query(
+      `SELECT * from QKS86401.USERS WHERE email='${email}'`,
+      (err, data) => {
+        if(err){
+          res.json({ message: `Error in connection: ${err}` })
+        }
+        else{
+          let dataJson = JSON.parse(JSON.stringify(data))
+          console.log(dataJson[0].PASSWORD.trim().length)
+          if(dataJson[0].PASSWORD.trim() === password){
+            res.status(201).json({ message: "Access correct", status: true });
+          }
+          else {
+            res.status(403).json({message: 'Contraseña o usuario incorrecto'})
+          }
+        }
+        ibmdb.close();
+      }
+    );
+  });
+  
+})
 /* GET users listing. */
 router.post("/newUser", upload.single(), function (req, res) {
   console.log(req.body);
