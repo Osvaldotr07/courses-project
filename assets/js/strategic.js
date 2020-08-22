@@ -10,8 +10,6 @@ form.addEventListener("submit", async (event) => {
     body: formData,
   });
 
-  let responseJson = await response.json();
-  console.log(responseJson);
   if (response.ok) {
     alert("Acceso success");
     document.location.href = '/'
