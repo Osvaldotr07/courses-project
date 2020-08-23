@@ -16,27 +16,31 @@ router.post('/login', upload.single(),(req, res) => {
   } = req.body;
 
   ibmdb.open(connstr, (err, conn) => {
-    if (err) return console.log("error in connection: ", err);
+    if (err) {
+      res.status(500).json({message: 'Error connection with db'})
+    }
+    else {
+      conn.query(
+        `SELECT * from QKS86401.USERS WHERE email='${email}'`,
+        (err, data) => {
+          if(err){
+            res.json({ message: `Error in connection: ${err}` })
+          }
+          else{
+            let dataJson = JSON.parse(JSON.stringify(data))
+            console.log(dataJson[0].PASSWORD.trim().length)
+            if(dataJson[0].PASSWORD.trim() === password){
+              res.status(201).json({ message: "Access correct", status: true });
+            }
+            else {
+              res.status(403).json({message: 'Contraseña o usuario incorrecto'})
+            }
+          }
+          ibmdb.close();
+        }
+      );
+    }
 
-    conn.query(
-      `SELECT * from QKS86401.USERS WHERE email='${email}'`,
-      (err, data) => {
-        if(err){
-          res.json({ message: `Error in connection: ${err}` })
-        }
-        else{
-          let dataJson = JSON.parse(JSON.stringify(data))
-          console.log(dataJson[0].PASSWORD.trim().length)
-          if(dataJson[0].PASSWORD.trim() === password){
-            res.status(201).json({ message: "Access correct", status: true });
-          }
-          else {
-            res.status(403).json({message: 'Contraseña o usuario incorrecto'})
-          }
-        }
-        ibmdb.close();
-      }
-    );
   });
   
 })
