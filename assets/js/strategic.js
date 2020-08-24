@@ -3,7 +3,7 @@ const form = document.querySelector("#form");
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   let formData = new FormData(event.currentTarget);
-  let response = await fetch("/user/login", {
+  let response = await fetch("user-login", {
     method: "POST",
     body: formData,
   });
