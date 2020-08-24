@@ -9,7 +9,6 @@ const connstr =
 
 
 router.post('/login', upload.single(),(req, res) => {
-  console.log(req.body);
   const {
     email,
     password,
@@ -28,9 +27,8 @@ router.post('/login', upload.single(),(req, res) => {
           }
           else{
             let dataJson = JSON.parse(JSON.stringify(data))
-            console.log(dataJson[0].PASSWORD.trim().length)
             if(dataJson[0].PASSWORD.trim() === password){
-              res.status(201).json({ message: "Access correct", status: true });
+              res.status(201).json({ message: "Access correct", status: true,  data: dataJson })
             }
             else {
               res.status(403).json({message: 'Contraseña o usuario incorrecto'})
