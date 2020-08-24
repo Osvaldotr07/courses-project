@@ -67,6 +67,6 @@ app.post('/user-login', upload.single(),(req, res) => {
   
 })
 
-app.listen(8080, () => {
-  console.log("Puerto conectado en el puerto 8080");
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port");
 });
