@@ -6,8 +6,7 @@ const ibmdb = require("ibm_db");
 const connstr =
   "DATABASE=BLUDB;HOSTNAME=dashdb-txn-sbox-yp-dal09-14.services.dal.bluemix.net;PORT=50001;PROTOCOL=TCPIP;UID=qks86401;PWD=0j2z3xk+rxg9hn5x;Security=SSL;";
 /* GET users listing. */
-
-router.post("/newUser", function (req, res) {
+router.post("/newUser", upload.single(), function (req, res) {
   console.log(req.body);
   const {
     id_random = Math.floor(Math.random() * 36000000),

@@ -32,7 +32,7 @@ app.get("/login", (req, res) => {
   res.sendFile(__dirname + "/views/login.html");
 });
 
-app.post('/user-login',(req, res) => {
+app.post('/user-login', upload.single(),(req, res) => {
   const {
     email,
     password,
