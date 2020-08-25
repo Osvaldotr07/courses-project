@@ -10,6 +10,7 @@ form.addEventListener("submit", async (event) => {
   let resJson = await response.json()
   delete resJson.data[0].PASSWORD
   if (response.ok) {
+    sessionStorage.setItem('inicio', JSON.stringify(resJson))
     localStorage.setItem('data', JSON.stringify(resJson))
     document.location.href = '/'
   }
