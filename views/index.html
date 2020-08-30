@@ -2,14 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <title>Course</title>
   </head>
-  <body ng-app="index-course">
+  <body>
     <header class="header">
-      <figure class="header_wrapper-logo">
+      <!-- <figure class="header_wrapper-logo">
         <img
           alt="Logo"
           class="header_logo-img"
@@ -18,7 +23,11 @@
           width="150px"
         />
       </figure>
+      <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
+    aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i
+        class="fas fa-bars fa-1x"></i></span></button>
       <nav class="header_nav">
+        <span class="navbar-toggler-icon"></span>
         <ul class="wrapper_nav">
           <li class="nav-item">
             <a href="/">Home</a>
@@ -42,25 +51,95 @@
         <div class="button-signon">
           <a href="/register">Registrar</a> 
         </div>
+      </nav> -->
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark ">
+        <a class="navbar-brand" href="/">Courses</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/classes">Class</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1">foro</a>
+            </li>
+            <li class="nav-item">
+              <p class="profile_name"></p>
+            </li>
+          </ul>
+          
+          <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin-right: 10px;">
+              <a class="nav-link" href="/login">Login</a>
+            </button>
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+              <a class="nav-link" href="/register">Signon</a>
+            </button>
+          </form>
+        </div>
       </nav>
     </header>
-    <section class="wrapper-classes">
-      <article class="wrapper-classes-section">
-        <h2 class="classes-title">Classes</h2>
-          <div class="card-wrapper">
-            <div class="card">
-              <a href="/classes">
-                <h3>AI Course</h3>
-              </a>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" style="height: auto;">
+        <div class="carousel-item active">
+          <a href="/responsive.html">
+            <img src="images/ML.jpg" class="d-block w-100" alt="...">
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="/responsive.html">
+            <img src="images/ingles.jpg" class="d-block w-100" alt="...">
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="/responsive.html">
+            <img src="images/js.jpg" class="d-block w-100" alt="...">
+          </a>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <div class="container" style="margin-top: 80px;">
+      <div class="row">
+        <div class="col">
+          <h2 class="classes-title">Classes</h2>
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="card">
+                    <a href="/classes">
+                      <h3>AI Course</h3>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+          <div class="col">
+            <h2>Student Progress</h2>
+            <canvas id="myChart"></canvas>
+          </div>
         </div>
-      </article>
-      <article class="student-article">
-        <h2>Student Progress</h2>
-        <canvas id="myChart"></canvas>
-      </article>
-    </section>
+      </div>
+    </div>
     <section>
       <h2 class="suscribe-title">New courses that you can suscribe</h2>
       <article class="wrapper-classes-section">

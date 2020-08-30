@@ -1,7 +1,7 @@
 let data = localStorage.getItem('data')
 let jsonData = JSON.parse(data)
-let btnSigin = document.querySelector('.button-signin')
-let btnSignon = document.querySelector('.button-signon')
+let btnSigin = document.querySelector('.btn-outline-success')
+let btnSignon = document.querySelector('.btn-outline-primary')
 let prfName = document.querySelector('.profile_name')
 let wrapperCourse = document.querySelectorAll('.card-wrapper')
 
