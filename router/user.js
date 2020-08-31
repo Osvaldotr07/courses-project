@@ -18,6 +18,7 @@ router.get('/courses', (rew, res) => {
           ? res.json({ message: `Error in connection: ${err}` })
           : res.json({ message: "New user inserted", data });
         ibmdb.close();
+        conn.close()
       }
     );
   });
@@ -51,6 +52,7 @@ router.post("/newUser", upload.single(), function (req, res) {
             ? res.json({ message: `Error in connection: ${err}` })
             : res.json({ message: "New user inserted" });
           ibmdb.close();
+          conn.close()
         }
       );
     });
